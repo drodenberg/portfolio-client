@@ -1,6 +1,14 @@
 import React from 'react'
 
-const SelfStudy = () => (
+interface SelfStudyProps {
+  communityWork: CommunityWork;
+}
+
+interface CommunityWork {
+
+}
+
+const SelfStudy: React.FC<SelfStudyProps> = ({ communityWork }) => (
   <div className="col s12 m8 l8" style={{ float: 'right' }} >
     <div className="card-panel">
       <div className="row">
