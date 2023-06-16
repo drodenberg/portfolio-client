@@ -7,7 +7,7 @@ import Resume from '@/components/portfolio/resume'
 import Footer from '@/components/portfolio/footer'
 
 async function getData() {
-  const res = await fetch('http://127.0.0.1:1337/api/personal-websites/1?populate=deep', {
+  const res = await fetch('https://drodenberg-portfolio-ff4c6e7e8508.herokuapp.com/api/personal-websites/1?populate=deep', {
     method: "GET",
     headers: {
       "Content-Type": "application/json",

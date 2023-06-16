@@ -1,7 +1,7 @@
 import Resume from './resume'
 
 async function getData() {
-  const res = await fetch('http://127.0.0.1:1337/api/resumes?populate=deep', {
+  const res = await fetch('https://drodenberg-portfolio-ff4c6e7e8508.herokuapp.com/api/resumes?populate=deep', {
     method: "GET",
     headers: {
       "Content-Type": "application/json",
