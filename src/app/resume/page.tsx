@@ -24,6 +24,8 @@ async function getData() {
 const ResumePage = async () => {
   const data = await getData()
 
+  console.log(data)
+
   return <Resume data={data} />
 }
 
