@@ -26,7 +26,6 @@ interface ExpertiseIcon {
 }
 
 const Expertise: React.FC<ExpertiseProps> = ({ expertise }) => {
-  console.log('expertise, ', `https://portfolio-server.services.divvit.co/assets/${expertise[2].id}`)
   return (
     <section id="services" className="bg-black relative">
       <div className="container">

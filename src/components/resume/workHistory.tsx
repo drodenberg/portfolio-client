@@ -6,8 +6,20 @@ interface WorkHistoryCompProps {
   data: Array<WorkHistoryProps>
 }
 
+export const workHistorySort = (a: WorkHistoryProps, b: WorkHistoryProps): number => {
+  const retreiveNumber = (x: string) => parseInt(x.split(' ')[1])
+
+  if (retreiveNumber(a.tenure) > retreiveNumber(b.tenure)) {
+    return -1
+  } else if (retreiveNumber(a.tenure) < retreiveNumber(b.tenure)) {
+    return 1
+  }
+
+  return 0
+}
+
 const WorkHistory: React.FC<WorkHistoryCompProps> = (data) => {
-  const workHistory = data.data
+  const workHistory = data.data.sort(workHistorySort)
 
   return (<div className="col s12 m8 l8">
     <div className="card-panel">

@@ -1,4 +1,12 @@
-const Footer = () => (
+interface FooterProps {
+  email: string
+  phoneNumber: string
+  facebookLink: string
+  twitterLink: string
+  linkedInLink: string
+}
+
+const Footer: React.FC<FooterProps> = ({ email, phoneNumber, facebookLink, twitterLink, linkedInLink }) => (
   <footer className="bg-black pt-[100px] pb-12 relative z-10">
     <div className="container">
       <div className="flex flex-wrap -mx-4">
@@ -6,9 +14,8 @@ const Footer = () => (
           <div className="mb-10">
             <h2 className="font-bold text-white text-[44px] leading-tight mb-5">Lets Talk!</h2>
             <h3 className="font-bold text-white opacity-70 text-2xl mb-2">Contact Info</h3>
-            <p className="font-medium text-base text-body-color mb-1">closerpage@email.com</p>
-            <p className="font-medium text-base text-body-color mb-1">12 Hilton St, Manchester M1 1JF</p>
-            <p className="font-medium text-base text-body-color mb-1">+44 012 34 5678</p>
+            <p className="font-medium text-base text-body-color mb-1">{email}</p>
+            <p className="font-medium text-base text-body-color mb-1">{phoneNumber}</p>
           </div>
         </div>
 
@@ -16,7 +23,7 @@ const Footer = () => (
         <div className="mt-10 pt-12 border-t border-white border-opacity-10">
           <div className="flex items-center justify-center mb-5">
             <a
-              href="javascript:void(0)"
+              href='https://www.facebook.com/daniel.rodenberg'
               className="flex items-center justify-center w-8 h-8 founded-full mx-2 text-body-color hover:text-primary"
               aria-label="social-link"
             >
@@ -28,7 +35,7 @@ const Footer = () => (
             </a>
 
             <a
-              href="javascript:void(0)"
+              href='https://twitter.com/D_Rode92'
               className="flex items-center justify-center w-8 h-8 founded-full mx-2 text-body-color hover:text-primary"
               aria-label="social-link"
             >
@@ -39,7 +46,7 @@ const Footer = () => (
               </svg>
             </a>
             <a
-              href="javascript:void(0)"
+              href="https://www.linkedin.com/in/daniel-rodenberg-a182a85a/"
               className="flex items-center justify-center w-8 h-8 founded-full mx-2 text-body-color hover:text-primary"
               aria-label="social-link"
             >

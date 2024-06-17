@@ -29,7 +29,7 @@ async function getData() {
 
 export default async function Home() {
   const data = await getData()
-  console.log(data.previous_clients)
+
   return (
     <>
       <Hero currentPosition={data.position} shortExperienceDescription={data.shortExperienceDescription} />
@@ -37,8 +37,8 @@ export default async function Home() {
       <Expertise expertise={data.expertise} />
       <Projects />
       <PreviousClients clients={data.previous_clients} />
-      <Resume />
-      <Footer />
+      <Resume data={data.work_history} />
+      <Footer email={data.email} phoneNumber={data.phoneNumber} facebookLink={data.facebookLink} twitterLink={data.twitterLink} linkedInLink={data.linkedInLink} />
     </>
   )
 }
