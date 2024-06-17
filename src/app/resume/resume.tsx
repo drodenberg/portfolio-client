@@ -4,35 +4,22 @@ import WorkHistory from '@/components/resume/workHistory'
 import '../../app/globals.css'
 
 
-export interface ParentArray {
-  id: number;
-  attributes: any;
-}
-
 interface ResumeProps {
   data: ResumeObject;
 }
 
-interface ResumeObject {
+export interface ResumeObject {
   name: string;
   currentPosition: string;
-  contact: ContactInfo;
-  collegeInfo: CollegeInfo;
-  skills: Skills;
+  skills: Array<Skills>;
   community: CommunityWork;
   professionalSummary: string;
   lookingFor: string;
-  workHistory: WorkHistoryProps;
-}
-
-interface ContactInfo {
+  work_history: Array<WorkHistoryProps>;
   personalEmail: string;
   phoneNumber: string;
   githubLink: string;
   linkedInLink: string;
-}
-
-interface CollegeInfo {
   school: string;
   degree: string;
   years: string;
@@ -40,34 +27,53 @@ interface CollegeInfo {
 }
 
 interface Skills {
-  data: Array<ParentArray>;
+  id: string
+  date_created: string
+  date_updated: string
+  name: string
 }
 
 interface CommunityWork {
   data: Array<any>;
 }
 
-interface WorkHistoryProps {
-  data: Array<ParentArray>;
+export interface WorkHistoryProps {
+  id: string
+  date_created: string
+  date_updated: string
+  company: string
+  title: string
+  tenure: string
+  accomplishments: Array<Accomplishment>
+}
+
+interface Accomplishment {
+  id: string
+  date_created: string
+  date_updated: string
+  description: string
+  accomplistments: Array<AccomplishmentExplanation>
+}
+
+interface AccomplishmentExplanation {
+  id: string
+  date_created: string
+  date_updated: string
+  explanation: string
 }
 
 export default async function Resume({ data }: ResumeProps) {
-  return (<div className="resume-container container">
-    <div className="row">
-      <Sidebar
-        name={data.name}
-        currentPosition={data.currentPosition}
-        contactInfo={data.contact}
-        collegeInfo={data.collegeInfo}
-        skills={data.skills}
-        communityWork={data.community} />
+  return (
+    <div className="resume-container container">
+      <div className="row">
+        <Sidebar {...data} />
 
-      <section className="resume">
-        <About summary={data.professionalSummary} lookingFor={data.lookingFor} />
-        <WorkHistory workHistory={data.workHistory} />
-      </section>
+        <section className="resume">
+          <About summary={data.professionalSummary} lookingFor={data.lookingFor} />
+          <WorkHistory data={data.work_history} />
+        </section>
+      </div>
     </div>
-  </div>
   )
 }
 

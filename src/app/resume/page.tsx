@@ -1,7 +1,7 @@
 import Resume from './resume'
 
 async function getData() {
-  const res = await fetch('https://drodenberg-portfolio-ff4c6e7e8508.herokuapp.com/api/resumes?populate=deep', {
+  const res = await fetch('https://portfolio-server.services.divvit.co/items/resume?fields=*.*,work_history.accomplishments.*.*', {
     method: "GET",
     headers: {
       "Content-Type": "application/json",
@@ -16,15 +16,19 @@ async function getData() {
     throw new Error('Failed to fetch data')
   }
 
+
+
   const data = await res.json()
 
-  return data.data[0].attributes
+
+
+  return data.data[0]
 }
 
 const ResumePage = async () => {
   const data = await getData()
 
-  console.log(data)
+
 
   return <Resume data={data} />
 }

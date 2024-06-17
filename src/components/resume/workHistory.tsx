@@ -1,39 +1,15 @@
 import React from 'react'
 import '../../app/resume/styled.css'
+import { WorkHistoryProps } from '@/app/resume/resume';
 
-interface SidebarProps {
-  workHistory: WorkHistory;
+interface WorkHistoryCompProps {
+  data: Array<WorkHistoryProps>
 }
 
-interface WorkHistory {
-  data: Array<ParentArray>;
-}
+const WorkHistory: React.FC<WorkHistoryCompProps> = (data) => {
+  const workHistory = data.data
 
-interface ParentArray {
-  id: number;
-  attributes: WorkPlaces;
-}
-
-interface WorkPlaces {
-  company: string;
-  title: string;
-  tenure: string;
-  accomplishments: Array<Accomplishment>;
-}
-
-interface Accomplishment {
-  id: number;
-  description: string;
-  accomplishment: Array<AccomplishmentDetail>;
-}
-
-interface AccomplishmentDetail {
-  id: number;
-  specifics: string;
-}
-
-const WorkHistory: React.FC<SidebarProps> = ({ workHistory }) => (
-  <div className="col s12 m8 l8">
+  return (<div className="col s12 m8 l8">
     <div className="card-panel">
       <div className="row">
 
@@ -43,34 +19,41 @@ const WorkHistory: React.FC<SidebarProps> = ({ workHistory }) => (
 
         <div className="col s12 m10 l10">
           <h4>Work History</h4>
-          {workHistory.data.map(workPlace => (
+          {workHistory.map(workPlace => (
             <>
               <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', paddingRight: 20 }}>
-                <h5>{workPlace.attributes.title} @ <a href='https://divvit.co' style={{ color: '#3379b7' }} target='_blank' rel="noopener noreferrer">{workPlace.attributes.company}</a></h5>
-                <p className="highlight">{workPlace.attributes.tenure}</p>
+                <h5>{workPlace.title} @ <a href='https://divvit.co' style={{ color: '#3379b7' }} target='_blank' rel="noopener noreferrer">{workPlace.company}</a></h5>
+                <p className="highlight">{workPlace.tenure}</p>
               </div>
 
 
-              {workPlace.attributes.accomplishments.map(accomplishment => (
-                <>
-                  <p style={{ paddingTop: 10 }}><strong>{accomplishment.description}</strong></p>
-                  <div className="tab">
-                    <ul>
-                      {accomplishment.accomplishment.map(detail => (
-                        <li key={detail.id} style={{ listStyleType: 'disc' }}>{detail.specifics}</li>
-                      ))}
+              {workPlace.accomplishments.map(accomplishment => {
+                return (
+                  <>
+                    <p style={{ paddingTop: 10 }}><strong>{accomplishment.description}</strong></p>
+                    <div className="tab">
+                      <ul>
+                        {accomplishment.accomplistments.map(detail => (
+                          <li key={detail.id} style={{ listStyleType: 'disc' }}>{detail.explanation}</li>
+                        ))}
 
-                    </ul>
-                  </div>
-                </>
-              ))}
+                      </ul>
+                    </div>
+                  </>
+                )
+              }
+
+
+
+              )}
             </>
           ))}
         </div>
       </div>
     </div >
   </div >
-)
+  )
+}
 
 export default WorkHistory
 
