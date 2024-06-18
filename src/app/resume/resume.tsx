@@ -53,6 +53,7 @@ interface Accomplishment {
   date_updated: string
   description: string
   accomplistments: Array<AccomplishmentExplanation>
+  order: number
 }
 
 interface AccomplishmentExplanation {
@@ -60,6 +61,7 @@ interface AccomplishmentExplanation {
   date_created: string
   date_updated: string
   explanation: string
+  order: number
 }
 
 export default async function Resume({ data }: ResumeProps) {

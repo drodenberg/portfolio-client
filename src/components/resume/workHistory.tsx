@@ -39,13 +39,13 @@ const WorkHistory: React.FC<WorkHistoryCompProps> = (data) => {
               </div>
 
 
-              {workPlace.accomplishments.map(accomplishment => {
+              {workPlace.accomplishments.sort((a, b) => a.order < b.order ? -1 : 1).map(accomplishment => {
                 return (
                   <>
                     <p style={{ paddingTop: 10 }}><strong>{accomplishment.description}</strong></p>
                     <div className="tab">
                       <ul>
-                        {accomplishment.accomplistments.map(detail => (
+                        {accomplishment.accomplistments.sort((a, b) => a.order < b.order ? -1 : 1).map(detail => (
                           <li key={detail.id} style={{ listStyleType: 'disc' }}>{detail.explanation}</li>
                         ))}
 
