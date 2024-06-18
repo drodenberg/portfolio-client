@@ -125,9 +125,9 @@ const Sidebar: React.FC<ResumeObject> = ({ name, personalEmail, phoneNumber, git
             <i className='small material-icons iconPadding'>home</i>
           </div>
           <div className='col s8 m10 l10'>
-            <h5>Personal Projects</h5>
+            <h5>Projects</h5>
             <>
-              <p><strong>Co-Founder @ Divvit</strong></p>
+              <p><strong>Divvit Golf App</strong></p>
               <div className="tab">
                 <ul>
                   <li style={{ listStyleType: 'disc' }}>Golf startup working on bringing new and existing golfers to their local courses.</li>
