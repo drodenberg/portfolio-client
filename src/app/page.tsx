@@ -35,7 +35,7 @@ export default async function Home() {
       <Hero currentPosition={data.position} shortExperienceDescription={data.shortExperienceDescription} />
       <AboutMe tagLine={data.personalTagLine} shortBio={data.shortBio} shortCareerDescription={data.shortCareerDescription} />
       <Expertise expertise={data.expertise} />
-      <Projects />
+      <Projects projects={data.portfolio} />
       <PreviousClients clients={data.previous_clients} />
       <Resume data={data.work_history} />
       <Footer email={data.email} phoneNumber={data.phoneNumber} facebookLink={data.facebookLink} twitterLink={data.twitterLink} linkedInLink={data.linkedInLink} />

@@ -4,6 +4,7 @@ import Image from 'next/image'
 import '../../app/resume/styled.css'
 import SelfStudy from './selfStudy';
 import { ResumeObject } from '@/app/resume/resume';
+import { workHistorySort } from './workHistory';
 
 interface SidebarProps {
   data: ResumeObject
@@ -119,26 +120,25 @@ const Sidebar: React.FC<ResumeObject> = ({ name, personalEmail, phoneNumber, git
           </div>
         </div>
 
-        {/* <div className='row'>
+        <div className='row'>
           <div className='col s4 m2 l2'>
             <i className='small material-icons iconPadding'>home</i>
           </div>
           <div className='col s8 m10 l10'>
-            <h5>Community</h5>
-            {communityWork.map(work => (
-              <>
-                <p><strong>{work.attributes.description}</strong></p>
-                <div className="tab">
-                  <ul>
-                    {work.attributes.accomplishments.map(detail => (
-                      <li key={detail.id} style={{ listStyleType: 'disc' }}>{detail.accomplishment}</li>
-                    ))}
-                  </ul>
-                </div>
-              </>
-            ))}
+            <h5>Personal Projects</h5>
+            <>
+              <p><strong>Co-Founder @ Divvit</strong></p>
+              <div className="tab">
+                <ul>
+                  <li style={{ listStyleType: 'disc' }}>Golf startup working on bringing new and existing golfers to their local courses.</li>
+                  <li style={{ listStyleType: 'disc' }}>    Built out, with openlayers and stored in postGIS, over 2000 golf courses throughout the US.</li>
+                  <li style={{ listStyleType: 'disc' }}>Published a mobile app called Divvit Golf using Flutter that is in the app store.</li>
+                  <li style={{ listStyleType: 'disc' }}>Ran a charity event for Lift For Life Academy in June 2021 that raised over $7,000.</li>
+                </ul>
+              </div>
+            </>
           </div>
-                    </div>*/}
+        </div>
       </div>
 
       {/* <SelfStudy /> */}
