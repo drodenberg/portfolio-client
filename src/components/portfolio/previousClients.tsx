@@ -31,15 +31,8 @@ const PreviousClients: React.FC<PreviousClientProps> = (previousClients) => {
               "
             >
               {previousClients.clients.map(client => (
-                <a
-                  key={client.id}
-                  href="https://tailgrids.com"
-                  target="_blank"
-                  rel="nofollow noreferrer"
-                  className="flex items-center justify-center max-w-[120px] lg:max-w-[130px] xl:max-w-[150px] 2xl:max-w-[160px] mx-3 sm:mx-4 xl:mx-6 2xl:mx-8 py-[15px] "
-                >
-                  <Image alt='daniel_rodenberg' width={200} height={200} src={`https://portfolio-server.services.divvit.co/assets/${client.logo}`} />
-                </a>
+
+                <Image key={client.id} alt='daniel_rodenberg' width={200} height={200} src={`https://portfolio-server.services.divvit.co/assets/${client.logo}`} />
               ))}
               {/*  */}
             </div>
