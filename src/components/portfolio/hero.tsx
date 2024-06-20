@@ -9,7 +9,7 @@ interface HeroProps {
 
 const Hero: React.FC<HeroProps> = ({ currentPosition, shortExperienceDescription }) => (
   <section id="home" className="relative z-10 pt-[150px] lg:pt-[100px] 2xl:flex items-center 2xl:h-[700px]">
-    <div className="container">
+    <div className="container" style={{ zIndex: 1000, position: 'relative' }}>
       <div className="flex flex-wrap mx-[-16px]">
         <div className="w-full lg:w-1/2 self-center px-4">
           <div>

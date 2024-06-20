@@ -3,14 +3,6 @@
   margin-top: 1% !important;
 }
 
-a {
-  color: #f0ad4e !important;
-}
-
-a:hover {
-  color: white !important;
-}
-
 a:hover.resumeHover {
   color: #337ab7 !important;
 }

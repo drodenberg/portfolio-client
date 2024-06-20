@@ -79,8 +79,8 @@ const Sidebar: React.FC<ResumeObject> = ({ name, personalEmail, phoneNumber, git
             <ul className='list-unstyled'>
               <li>{personalEmail}</li>
               <li>{phoneNumber}</li>
-              <li><a href={githubLink} target='_blank' rel="noopener noreferrer">github.com/drodenberg</a></li>
-              <li><a href={linkedInLink} target='_blank' rel="noopener noreferrer">@d_rode92</a></li>
+              <li><a href={githubLink} style={{ color: '#f0ad4e' }} target='_blank' rel="noopener noreferrer">github.com/drodenberg</a></li>
+              <li><a href={linkedInLink} style={{ color: '#f0ad4e' }} target='_blank' rel="noopener noreferrer">@d_rode92</a></li>
             </ul>
           </div>
         </div>
