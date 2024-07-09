@@ -132,9 +132,10 @@ const Sidebar: React.FC<ResumeObject> = ({ name, personalEmail, phoneNumber, git
               <div className="tab">
                 <ul>
                   <li style={{ listStyleType: 'disc' }}>Golf startup working on bringing new and existing golfers to their local courses.</li>
-                  <li style={{ listStyleType: 'disc' }}>    Built out, with openlayers and stored in postGIS, over 2000 golf courses throughout the US.</li>
-                  <li style={{ listStyleType: 'disc' }}>Published a mobile app called Divvit Golf using Flutter that is in the app store.</li>
-                  <li style={{ listStyleType: 'disc' }}>Ran a charity event for Lift For Life Academy in June 2021 that raised over $7,000.</li>
+                  <li style={{ listStyleType: 'disc' }}>Built out, with openlayers and stored in postGIS, over 2000 golf courses throughout the US.</li>
+                  <li style={{ listStyleType: 'disc' }}>Published a mobile app called Divvit Golf that is in the app store.</li>
+                  <li style={{ listStyleType: 'disc' }}>The app allows users to keep their scores and stats in a user friendly and convenient way which keeps their focus in the right spot, the game.</li>
+                  <li style={{ listStyleType: 'disc' }}>Hosted and ran a charity event for Lift For Life Academy in June 2021 that raised over $7,000.</li>
                 </ul>
               </div>
             </>
