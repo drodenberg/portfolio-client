@@ -12,8 +12,8 @@ const About: React.FC<{ summary: string, lookingFor: string }> = ({ summary, loo
         <div className="col s12 m10 l10">
           <h4>Professional Summary</h4>
 
-          <p style={{ marginBottom: 15 }}>{summary}</p>
-          <p>{lookingFor}</p>
+          <p>{summary}</p>
+          {/* <p>{lookingFor}</p> */}
         </div>
       </div>
     </div>

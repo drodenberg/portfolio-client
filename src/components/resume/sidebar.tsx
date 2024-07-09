@@ -127,7 +127,8 @@ const Sidebar: React.FC<ResumeObject> = ({ name, personalEmail, phoneNumber, git
           <div className='col s8 m10 l10'>
             <h5>Projects</h5>
             <>
-              <p><strong>Divvit Golf App</strong></p>
+              <p><strong>Divvit Golf App - (Aug 2020 - Present)</strong></p>
+              <p><strong>Co Founder & Head of Product</strong></p>
               <div className="tab">
                 <ul>
                   <li style={{ listStyleType: 'disc' }}>Golf startup working on bringing new and existing golfers to their local courses.</li>
